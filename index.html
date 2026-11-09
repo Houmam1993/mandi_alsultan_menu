@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mandi Al Sultan · Menu</title>
+<meta name="description" content="Mandi Al Sultan Restaurant, Ajman — menu, prices and WhatsApp ordering.">
+<link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="canonical" href="https://menu.mandi-alsultan.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://menu.mandi-alsultan.com/">
+<meta property="og:title" content="مندي السلطان · Mandi Al Sultan — Menu">
+<meta property="og:description" content="القائمة والأسعار والطلب عبر واتساب · Menu, prices and WhatsApp ordering — Ajman">
+<meta property="og:image" content="https://menu.mandi-alsultan.com/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0F1C33">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0F1C33; --navy-2:#16274A; --gold:#C9A45C; --gold-soft:#E4CC93; --saffron:#E39A3B;
+  --bg:#F3F0EA; --surface:#FFFFFF; --ink:#13213B; --ink-2:#56607A; --line:#E2DCCF;
+  --price:#9A7430; --chip:#FFFFFF; --chip-ink:#13213B;
+  --btn-wa:#1F9D55; --btn-wa-ink:#FFFFFF;
+  --f-ar:"IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+  --f-ar-display:"Aref Ruqaa", "IBM Plex Sans Arabic", serif;
+  --f-en-display:"Marcellus", Georgia, "Times New Roman", serif;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B1528; --surface:#13223F; --ink:#F1E9D8; --ink-2:#A9B1C4; --line:#22345A;
+    --price:#E4CC93; --chip:#13223F; --chip-ink:#F1E9D8; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0B1528; --surface:#13223F; --ink:#F1E9D8; --ink-2:#A9B1C4; --line:#22345A;
+  --price:#E4CC93; --chip:#13223F; --chip-ink:#F1E9D8; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-ar);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--navy)}
+
+/* ---------- Hero ---------- */
+.hero{background:var(--navy);color:#F1E9D8;position:relative;overflow:hidden;padding:28px 20px 0}
+.hero::after{content:"";position:absolute;inset:auto 0 0;height:40px;background:var(--bg);border-radius:28px 28px 0 0}
+.hero-top{display:flex;justify-content:space-between;align-items:center;max-width:1080px;margin:0 auto;position:relative;z-index:2}
+.lang{border:1px solid rgba(201,164,92,.5);background:transparent;color:var(--gold-soft);border-radius:999px;padding:6px 14px;font-size:14px;cursor:pointer;min-height:36px}
+.lang:hover{background:rgba(201,164,92,.12)}
+.open-hint{font-size:13px;color:#A9B1C4}
+.hero-inner{max-width:1080px;margin:0 auto;display:grid;gap:8px;justify-items:center;text-align:center;position:relative;z-index:2}
+.logo{width:min(180px,46vw);height:auto;margin-top:4px}
+.tagline{font-family:var(--f-ar-display);font-size:clamp(20px,5vw,26px);color:var(--gold-soft);margin:2px 0 0;line-height:1.5}
+html[lang="en"] .tagline{font-family:var(--f-en-display);letter-spacing:.02em;font-size:clamp(18px,4.4vw,22px)}
+.place{margin:0;font-size:14px;color:#A9B1C4}
+.hero-actions{display:flex;gap:10px;margin:14px 0 8px;flex-wrap:wrap;justify-content:center}
+.pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:10px 18px;font-weight:600;font-size:15px;text-decoration:none;min-height:44px}
+.pill svg{width:18px;height:18px;flex:none}
+.pill-gold{background:var(--gold);color:var(--navy)}
+.pill-ghost{border:1px solid rgba(241,233,216,.35);color:#F1E9D8}
+.pill-wa{background:var(--btn-wa);color:var(--btn-wa-ink)}
+.tray-stage{position:relative;width:min(460px,92vw);aspect-ratio:1;margin:10px auto -2px;z-index:1}
+.tray-stage::before{content:"";position:absolute;inset:-14px;border-radius:50%;border:1px solid rgba(201,164,92,.45)}
+.tray-stage::after{content:"";position:absolute;inset:-30px;border-radius:50%;border:1px dashed rgba(201,164,92,.18)}
+.tray-stage img{width:100%;height:100%;object-fit:cover;border-radius:50%;box-shadow:0 30px 60px rgba(0,0,0,.45)}
+@media (prefers-reduced-motion:no-preference){
+  .tray-stage img{animation:settle 1.4s cubic-bezier(.2,.7,.2,1) both}
+  .logo,.tagline,.place,.hero-actions{animation:rise .9s ease both}
+  .tagline{animation-delay:.12s}.place{animation-delay:.2s}.hero-actions{animation-delay:.28s}
+  @keyframes settle{from{transform:rotate(-14deg) scale(.94);opacity:0}to{transform:none;opacity:1}}
+  @keyframes rise{from{transform:translateY(10px);opacity:0}to{transform:none;opacity:1}}
+}
+
+/* ---------- Category nav ---------- */
+.cats{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.cats-inner{max-width:1080px;margin:0 auto;display:flex;gap:8px;overflow-x:auto;padding:12px 16px;scrollbar-width:none}
+.cats-inner::-webkit-scrollbar{display:none}
+.cat{flex:none;border:1px solid var(--line);background:var(--chip);color:var(--chip-ink);border-radius:999px;padding:7px 16px;font-size:15px;cursor:pointer;min-height:40px;white-space:nowrap}
+.cat[aria-current="true"]{background:var(--navy);color:var(--gold-soft);border-color:var(--navy)}
+:root[data-theme="dark"] .cat[aria-current="true"]{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .cat[aria-current="true"]{background:var(--gold);color:var(--navy);border-color:var(--gold)}}
+
+/* ---------- Sections ---------- */
+main{max-width:1080px;margin:0 auto;padding:8px 16px 140px}
+section{padding-top:26px}
+.sec-head{display:flex;align-items:baseline;gap:12px;margin:0 0 14px}
+.sec-head h2{margin:0;font-family:var(--f-ar-display);font-weight:700;font-size:30px;line-height:1.2;color:var(--ink)}
+html[lang="en"] .sec-head h2{font-family:var(--f-en-display);font-weight:400;font-size:28px}
+.sec-head .rule{flex:1;height:1px;background:linear-gradient(to left,var(--gold),transparent)}
+html[dir="ltr"] .sec-head .rule{background:linear-gradient(to right,var(--gold),transparent)}
+.sec-note{margin:-6px 0 14px;color:var(--ink-2);font-size:14px}
+
+.grid{display:grid;gap:18px;grid-template-columns:1fr}
+@media (min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+@media (min-width:980px){.grid{grid-template-columns:1fr 1fr 1fr}}
+.grid.feature{grid-template-columns:1fr}
+@media (min-width:760px){.grid.feature{grid-template-columns:1fr 1fr}}
+
+.dish{background:var(--surface);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--line)}
+.dish-photo{position:relative;aspect-ratio:4/3;background:var(--navy-2);overflow:hidden;cursor:zoom-in;border:0;padding:0;width:100%}
+.dish-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+@media (hover:hover){.dish-photo:hover img{transform:scale(1.03)}}
+.badge{position:absolute;top:12px;inset-inline-start:12px;background:var(--navy);color:var(--gold-soft);font-size:13px;padding:4px 12px;border-radius:999px}
+.dish-body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.dish-title{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.dish h3{margin:0;font-size:19px;font-weight:700;line-height:1.35}
+.alt{display:block;font-size:13px;font-weight:500;color:var(--ink-2);margin-top:2px}
+html[dir="rtl"] .alt{font-family:var(--f-en-display);letter-spacing:.02em}
+.price{white-space:nowrap;font-weight:700;color:var(--price);font-size:20px;font-variant-numeric:tabular-nums}
+.price small{font-size:12px;font-weight:600;margin-inline-start:3px}
+html[dir="ltr"] .price small{margin-inline-start:0}
+.price.ask{font-size:14px;font-weight:600}
+.desc{margin:0;color:var(--ink-2);font-size:14.5px;line-height:1.65}
+.dish-foot{margin-top:auto;padding-top:8px;display:flex;justify-content:flex-end}
+.add{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold-soft);border:0;border-radius:999px;padding:9px 18px;font-weight:600;cursor:pointer;min-height:42px}
+:root[data-theme="dark"] .add{background:var(--gold);color:var(--navy)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .add{background:var(--gold);color:var(--navy)}}
+.stepper{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;overflow:hidden;min-height:42px}
+.stepper button{border:0;background:transparent;width:42px;height:42px;font-size:20px;cursor:pointer;color:var(--ink)}
+.stepper output{min-width:28px;text-align:center;font-weight:700}
+
+
+.dish-foot{gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.dish-foot .add,.dish-foot .stepper{margin-inline-start:auto}
+.opts{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px}
+.opts button{border:0;background:transparent;border-radius:999px;padding:6px 12px;font-size:14px;cursor:pointer;min-height:36px;color:var(--ink-2);font-weight:600}
+.opts button[aria-checked="true"]{background:rgba(201,164,92,.22);color:var(--ink)}
+.was{color:var(--ink-2);font-weight:500;font-size:14px}
+.sec-offers .dish{border-color:var(--gold)}
+
+/* ---------- Info ---------- */
+.info{margin-top:36px;background:var(--navy);color:#F1E9D8;border-radius:22px;padding:24px 20px;display:grid;gap:14px}
+.info h2{margin:0;font-family:var(--f-ar-display);font-size:26px;color:var(--gold-soft);font-weight:700}
+html[lang="en"] .info h2{font-family:var(--f-en-display);font-weight:400}
+.info p{margin:0;color:#C9CFDC}
+.info-actions{display:flex;flex-wrap:wrap;gap:10px}
+.vat{margin:18px 0 0;text-align:center;color:var(--ink-2);font-size:13px}
+
+/* ---------- Bottom bar ---------- */
+.bar{position:fixed;inset:auto 0 0;z-index:40;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:linear-gradient(to top,var(--bg) 70%,transparent)}
+.bar-inner{max-width:560px;margin:0 auto;display:flex;gap:10px}
+.bar .pill{flex:1;justify-content:center;box-shadow:0 8px 24px rgba(15,28,51,.25);border:0;cursor:pointer}
+.bar .call{background:var(--navy);color:#F1E9D8;flex:0 0 auto}
+.bar .cart-btn{background:var(--btn-wa);color:#fff;justify-content:space-between;padding-inline:18px}
+.count{background:#fff;color:var(--btn-wa);border-radius:999px;min-width:24px;height:24px;display:inline-grid;place-items:center;font-size:13px;font-weight:700;padding:0 6px}
+
+/* ---------- Sheet ---------- */
+.scrim{position:fixed;inset:0;background:rgba(6,12,24,.55);z-index:50;opacity:0;pointer-events:none;transition:opacity .25s}
+.scrim.open{opacity:1;pointer-events:auto}
+.sheet{position:fixed;inset:auto 0 0;z-index:60;background:var(--surface);color:var(--ink);border-radius:22px 22px 0 0;max-height:88vh;max-height:88dvh;display:flex;flex-direction:column;transform:translateY(105%);transition:transform .3s cubic-bezier(.2,.8,.2,1);max-width:620px;margin:0 auto;padding-bottom:env(safe-area-inset-bottom,0px)}
+.sheet.open{transform:none}
+@media (prefers-reduced-motion:reduce){.sheet,.scrim{transition:none}}
+.sheet-head{display:flex;justify-content:space-between;align-items:center;padding:16px 18px 8px}
+.sheet-head h2{margin:0;font-size:20px}
+.x{border:0;background:transparent;font-size:26px;width:44px;height:44px;cursor:pointer;color:var(--ink-2)}
+.sheet-body{overflow:auto;padding:0 18px 12px}
+.line{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.line img{width:56px;height:56px;border-radius:12px;object-fit:cover;flex:none}
+.line .n{flex:1;min-width:0}
+.line .n b{display:block;font-size:15px}
+.line .n span{font-size:13px;color:var(--ink-2)}
+.total{display:flex;justify-content:space-between;padding:14px 0 4px;font-weight:700;font-size:17px}
+.total-note{font-size:13px;color:var(--ink-2);margin:0 0 6px}
+fieldset{border:0;padding:0;margin:14px 0 0}
+legend{font-weight:600;font-size:15px;margin-bottom:8px}
+.seg{display:flex;gap:8px}
+.seg label{flex:1}
+.seg input{position:absolute;opacity:0}
+.seg span{display:block;text-align:center;border:1px solid var(--line);border-radius:12px;padding:10px;cursor:pointer;font-weight:600}
+.seg input:checked+span{border-color:var(--gold);background:rgba(201,164,92,.15)}
+.seg input:focus-visible+span{outline:2px solid var(--gold);outline-offset:2px}
+.field{display:grid;gap:6px;margin-top:12px}
+.field label{font-size:14px;font-weight:600}
+.field input,.field textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 12px;width:100%}
+.field textarea{min-height:64px;resize:vertical}
+.sheet-foot{padding:12px 18px 16px;border-top:1px solid var(--line)}
+.send{width:100%;justify-content:center;font-size:16px}
+.empty{padding:30px 0;text-align:center;color:var(--ink-2)}
+
+/* ---------- Lightbox ---------- */
+.lightbox{position:fixed;inset:0;z-index:70;background:rgba(6,12,24,.92);display:none;align-items:center;justify-content:center;padding:20px}
+.lightbox.open{display:flex}
+.lightbox img{max-height:86vh;border-radius:14px}
+.lightbox .x{position:absolute;top:calc(10px + env(safe-area-inset-top,0px));inset-inline-end:10px;color:#fff}
+
+.toast{position:fixed;left:50%;bottom:calc(86px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--navy);color:var(--gold-soft);padding:8px 16px;border-radius:999px;font-size:14px;z-index:45;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.show{opacity:1}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-top">
+    <button class="lang" id="langBtn" type="button">English</button>
+    <span class="open-hint" data-t="city"></span>
+  </div>
+  <div class="hero-inner">
+    <img class="logo" src="images/logo.webp" alt="مندي السلطان — Mandi Al Sultan" width="550" height="490">
+    <p class="tagline" data-t="tagline"></p>
+    <p class="place" data-t="address"></p>
+    <div class="hero-actions">
+      <a class="pill pill-gold" id="heroCall" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><span data-t="call"></span></a>
+      <a class="pill pill-wa" id="heroWa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7a11.4 11.4 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.8 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.5.4.1.1.1.7-.1 1.3z"/></svg><span data-t="whatsapp"></span></a>
+    </div>
+  </div>
+  <div class="tray-stage"><img src="images/hero.jpg" alt="" data-alt="heroAlt" width="1100" height="1100"></div>
+</header>
+
+<nav class="cats" aria-label="Menu sections"><div class="cats-inner" id="cats"></div></nav>
+
+<main id="menu"></main>
+
+<div class="bar" id="bar"><div class="bar-inner" id="barInner"></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<div class="scrim" id="scrim"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheet-head"><h2 id="sheetTitle" data-t="yourOrder"></h2><button class="x" id="sheetClose" type="button" aria-label="Close">×</button></div>
+  <div class="sheet-body" id="sheetBody"></div>
+  <div class="sheet-foot"><a class="pill pill-wa send" id="sendBtn" href="#" target="_blank" rel="noopener"></a></div>
+</div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo"><button class="x" id="lbClose" type="button" aria-label="Close">×</button><img id="lbImg" alt=""></div>
+
+<script>
+const PHONE_CALL = "+97167497799";      // 06 749 7799
+const PHONE_WA   = "971501010534";      // 050 101 0534
+
+const T = {
+  ar:{dir:"rtl",cur:"درهم",switch:"English",city:"عجمان",
+    tagline:"السلطان… تجربة تليق بالذوق الرفيع",
+    address:"عجمان · النعيمية 3 · شارع بدر",
+    call:"اتصل بنا",whatsapp:"واتساب",add:"أضف",askPrice:"السعر عند الطلب",
+    yourOrder:"طلبك",empty:"سلتك فارغة. أضف أطباقك من القائمة.",
+    total:"المجموع",traysNote:"سعر الصواني يتم تأكيده عبر واتساب.",
+    type:"نوع الطلب",delivery:"توصيل",pickup:"استلام من المطعم",dinein:"في المطعم",
+    name:"الاسم",address2:"العنوان أو موقع الخريطة",notes:"ملاحظات (اختياري)",
+    send:"أرسل الطلب عبر واتساب",viewOrder:"عرض الطلب",added:"تمت الإضافة",
+    findUs:"زورونا",findText:"شارع بدر، النعيمية 3، عجمان.",map:"الموقع على الخريطة",
+    vat:"جميع الأسعار بالدرهم الإماراتي وشاملة ضريبة القيمة المضافة",
+    heroAlt:"صينية مندي مشكلة لحم ودجاج مع الشوربة والسلطة والصوصات",
+    msgHi:"مرحباً، أود الطلب من مطعم مندي السلطان:",msgTotal:"المجموع",msgType:"نوع الطلب",msgName:"الاسم",msgAddr:"العنوان",msgNotes:"ملاحظات",msgAsk:"السعر يُؤكَّد",
+    waHello:"مرحباً، أود الاستفسار عن قائمة مندي السلطان",
+    remove:"إزالة",more:"زيادة",less:"تقليل",zoom:"تكبير صورة"},
+  en:{dir:"ltr",cur:"AED",switch:"العربية",city:"Ajman",
+    tagline:"An experience for the refined palate",
+    address:"Badr Street · Al Nuaimiya 3 · Ajman",
+    call:"Call us",whatsapp:"WhatsApp",add:"Add",askPrice:"Price on request",
+    yourOrder:"Your order",empty:"Your order is empty. Add dishes from the menu.",
+    total:"Total",traysNote:"Tray prices are confirmed on WhatsApp.",
+    type:"Order type",delivery:"Delivery",pickup:"Pickup",dinein:"Dine in",
+    name:"Name",address2:"Address or map pin",notes:"Notes (optional)",
+    send:"Send order on WhatsApp",viewOrder:"View order",added:"Added",
+    findUs:"Visit us",findText:"Badr Street, Al Nuaimiya 3, Ajman.",map:"Open in maps",
+    vat:"All prices are in UAE dirhams and include VAT",
+    heroAlt:"Mixed lamb and chicken mandi tray with soup, salad and sauces",
+    msgHi:"Hello, I'd like to order from Mandi Al Sultan:",msgTotal:"Total",msgType:"Order type",msgName:"Name",msgAddr:"Address",msgNotes:"Notes",msgAsk:"price to confirm",
+    waHello:"Hello, I have a question about the Mandi Al Sultan menu",
+    remove:"Remove",more:"More",less:"Less",zoom:"Enlarge photo"}
+};
+
+const CATS = [
+  {id:"offers",ar:"العروض",en:"Offers",noteAr:"عروض متاحة لفترة محدودة.",noteEn:"Available for a limited time."},
+  {id:"daily",ar:"الأطباق اليومية",en:"Daily dishes"},
+  {id:"mandi",ar:"المندي والدجاج",en:"Mandi & chicken"},
+  {id:"feasts",ar:"ذبائح للولائم والعزائم",en:"Feasts & gatherings",
+    noteAr:"ذبائح وصواني كبيرة للعائلة والضيوف.",noteEn:"Whole lamb and big trays for family and guests."},
+  {id:"starters",ar:"المقبلات والسلطات",en:"Starters & salads"}
+];
+
+/* To add an offer: copy this line into DISHES and fill it in.
+   {id:"offer-1",cat:"offers",img:"images/offer-1.jpg",price:49,was:65,ar:"…",en:"…",dAr:"…",dEn:"…"},
+   The Offers section and its tab appear automatically once an offer exists. */
+const DISHES = [
+  /* Daily dishes */
+  {id:"mansaf",cat:"daily",img:"images/mansaf.jpg",price:39,
+    ar:"منسف أردني",en:"Jordanian mansaf",
+    dAr:"لحم بلبن الجميد الساخن على الرز الأصفر.",dEn:"Lamb in warm jameed yogurt sauce over yellow rice."},
+  {id:"kabsa",cat:"daily",img:"images/kabsa.jpg",
+    opts:[{k:"meat",ar:"لحم",en:"Meat",price:39},{k:"chicken",ar:"دجاج",en:"Chicken",price:30}],
+    ar:"كبسة",en:"Kabsa",
+    dAr:"رز الكبسة الأحمر مع اللوز المحمص، باللحم أو الدجاج.",dEn:"Red kabsa rice with toasted almonds, with lamb or chicken."},
+  {id:"musahab",cat:"daily",img:"images/musahab.jpg",price:29,
+    ar:"مسحب دجاج على الفحم",en:"Charcoal chicken musahab",
+    dAr:"قطع دجاج بدون عظم مشوية على الفحم، على الرز.",dEn:"Boneless chicken grilled over charcoal, on rice."},
+
+  /* Mandi & madhbi */
+  {id:"meat-mandi",cat:"mandi",img:"images/meat_mandi.jpg",price:55,
+    ar:"مندي لحم",en:"Meat mandi",
+    dAr:"لحم طري مطهو ببطء على رز المندي المبهّر.",dEn:"Slow-cooked tender lamb on spiced mandi rice."},
+  {id:"chicken-mandi",cat:"mandi",img:"images/chicken_mandi.jpg",price:25,
+    ar:"مندي دجاج",en:"Chicken mandi",
+    dAr:"دجاج مندي على رز المندي المبهّر.",dEn:"Mandi chicken on spiced mandi rice."},
+  {id:"chicken-madhbi",cat:"mandi",img:"images/chicken_madhbi.jpg",price:25,
+    ar:"مظبي دجاج",en:"Chicken madhbi",
+    dAr:"دجاج مشوي على الطريقة المظبية، على الرز.",dEn:"Chicken grilled madhbi style, served on rice."},
+  {id:"machine-rice",cat:"mandi",img:"images/machine_rice.jpg",
+    opts:[{k:"half",ar:"نص",en:"Half",price:25},{k:"whole",ar:"كامل",en:"Whole",price:40}],
+    ar:"دجاج ماكينة مع رز مندي",en:"Rotisserie chicken with mandi rice",
+    dAr:"دجاج مشوي على الماكينة، على رز المندي.",dEn:"Rotisserie-roasted chicken on mandi rice."},
+  {id:"machine-potato",cat:"mandi",img:"images/machine_potato.jpg",
+    opts:[{k:"half",ar:"نص",en:"Half",price:25},{k:"whole",ar:"كامل",en:"Whole",price:40}],
+    ar:"دجاج ماكينة مع بطاطا",en:"Rotisserie chicken with fries",
+    dAr:"دجاج مشوي على الماكينة مع البطاطا المقلية.",dEn:"Rotisserie-roasted chicken with french fries."},
+
+  /* Feasts */
+  {id:"zabiha",cat:"feasts",img:"images/zabiha.jpg",
+    opts:[{k:"quarter",ar:"ربع",en:"Quarter",price:150},{k:"half",ar:"نص",en:"Half",price:300},{k:"full",ar:"كاملة",en:"Whole",price:600}],
+    ar:"ذبيحة مندي",en:"Mandi zabiha",
+    dAr:"خروف مندي على صواني الرز، ربع أو نص أو ذبيحة كاملة.",dEn:"Mandi lamb on rice trays: a quarter, a half or a whole lamb."},
+  {id:"mix-tray",cat:"feasts",img:"images/mix_tray.jpg",price:null,
+    ar:"صينية مكس لحم ودجاج",en:"Mixed lamb & chicken tray",
+    dAr:"لحم ودجاج على رز المندي، مع الشوربة والسلطة والصوصات.",dEn:"Lamb and chicken over mandi rice, with soup, salad and sauces."},
+  {id:"weekend-tray",cat:"feasts",img:"images/weekend_tray.jpg",price:null,badgeAr:"عطلة نهاية الأسبوع",badgeEn:"Weekends",
+    ar:"صينية دجاج الويكند",en:"Weekend chicken tray",
+    dAr:"تشكيلة دجاج على صينية واحدة، مع الشوربة والسلطة والصوصات.",dEn:"A mix of chicken on one tray, with soup, salad and sauces."},
+
+  /* Starters & salads */
+  {id:"hummus",cat:"starters",img:"images/hummus.jpg",price:13,
+    ar:"حمص",en:"Hummus",
+    dAr:"حمص بالطحينة وزيت الزيتون.",dEn:"Chickpeas with tahini and olive oil."},
+  {id:"baba",cat:"starters",img:"images/baba.jpg",price:13,
+    ar:"بابا غنوج",en:"Baba ghanoush",
+    dAr:"باذنجان مشوي مع الخضار ودبس الرمان.",dEn:"Grilled eggplant with vegetables and pomegranate molasses."},
+  {id:"rocca",cat:"starters",img:"images/salad.jpg",
+    opts:[{k:"n",ar:"عادي",en:"Regular",price:10},{k:"l",ar:"كبير",en:"Large",price:15}],
+    ar:"سلطة جرجير",en:"Rocca salad",
+    dAr:"جرجير طازج مع البندورة والبصل بالسماق والليمون.",dEn:"Fresh rocca with tomato, sumac onion and lemon."}
+];
+
+/* ---------- state ---------- */
+const store = {
+  get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},
+  set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+};
+let lang = store.get("ms_lang") || ((navigator.language||"ar").toLowerCase().startsWith("ar") ? "ar" : "en");
+if(!T[lang]) lang = "ar";
+
+/* cart keys: "dishId" or "dishId:option" */
+const dishOf = key => DISHES.find(d=>d.id===key.split(":")[0]);
+const optOf  = key => { const d=dishOf(key); const k=key.split(":")[1]; return d&&d.opts ? d.opts.find(o=>o.k===k) : null; };
+const priceOf = key => { const o=optOf(key); return o ? o.price : dishOf(key).price; };
+let cart = store.get("ms_cart2") || {};
+for(const k in cart){ const d=dishOf(k); if(!d || !(cart[k]>0) || (d.opts && !optOf(k))) delete cart[k]; }
+let sel = {}; DISHES.forEach(d=>{ if(d.opts) sel[d.id]=d.opts[0].k; });
+const keyFor = d => d.opts ? `${d.id}:${sel[d.id]}` : d.id;
+let form = Object.assign({type:"delivery",name:"",addr:"",notes:""}, store.get("ms_form")||{});
+
+const $ = s => document.querySelector(s);
+const t = k => T[lang][k];
+const nm = d => d[lang];
+const other = d => d[lang==="ar"?"en":"ar"];
+const keyName = key => { const d=dishOf(key), o=optOf(key); return o ? `${nm(d)} (${o[lang]})` : nm(d); };
+const fmt = n => lang==="ar" ? `${n} ${t("cur")}` : `${t("cur")} ${n}`;
+const esc = s => String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const waLink = text => `https://wa.me/${PHONE_WA}?text=${encodeURIComponent(text)}`;
+const visibleCats = () => CATS.filter(c=>DISHES.some(d=>d.cat===c.id));
+
+/* ---------- render ---------- */
+function renderStatic(){
+  document.documentElement.lang = lang;
+  document.documentElement.dir = T[lang].dir;
+  document.title = lang==="ar" ? "مندي السلطان · القائمة" : "Mandi Al Sultan · Menu";
+  document.querySelectorAll("[data-t]").forEach(el=>el.textContent=t(el.dataset.t));
+  document.querySelectorAll("[data-alt]").forEach(el=>el.alt=t(el.dataset.alt));
+  $("#langBtn").textContent = t("switch");
+  $("#heroCall").href = `tel:${PHONE_CALL}`;
+  $("#heroWa").href = waLink(t("waHello"));
+  $("#cats").innerHTML = visibleCats().map((c,i)=>`<button class="cat" type="button" data-go="${c.id}" aria-current="${i===0}">${esc(c[lang])}</button>`).join("");
+}
+
+function money(p){ return lang==="ar"?`${p}<small>${t("cur")}</small>`:`<small>${t("cur")}</small> ${p}`; }
+function priceHTML(d){
+  const p = d.opts ? d.opts.find(o=>o.k===sel[d.id]).price : d.price;
+  if(p==null) return `<span class="price ask">${t("askPrice")}</span>`;
+  return `<span class="price">${d.was?`<s class="was">${d.was}</s> `:""}${money(p)}</span>`;
+}
+function optsHTML(d){
+  if(!d.opts) return "";
+  return `<div class="opts" role="radiogroup" aria-label="${esc(nm(d))}">${d.opts.map(o=>
+    `<button type="button" role="radio" aria-checked="${sel[d.id]===o.k}" data-opt="${d.id}:${o.k}">${esc(o[lang])}</button>`).join("")}</div>`;
+}
+function footHTML(d){
+  const key = keyFor(d), q = cart[key]||0;
+  const ctl = !q
+    ? `<button class="add" type="button" data-add="${key}"><span aria-hidden="true">+</span> ${t("add")}</button>`
+    : `<div class="stepper"><button type="button" data-dec="${key}" aria-label="${t("less")}">−</button><output aria-live="polite">${q}</output><button type="button" data-inc="${key}" aria-label="${t("more")}">+</button></div>`;
+  return `${optsHTML(d)}${ctl}`;
+}
+function cardHTML(d){
+  const badge = d[lang==="ar"?"badgeAr":"badgeEn"];
+  return `<article class="dish">
+    <button class="dish-photo" type="button" data-zoom="${d.id}" aria-label="${t("zoom")}: ${esc(nm(d))}">
+      <img src="${d.img}" alt="${esc(nm(d))}" loading="lazy" width="960" height="720">
+      ${badge?`<span class="badge">${esc(badge)}</span>`:""}
+    </button>
+    <div class="dish-body">
+      <div class="dish-title"><h3>${esc(nm(d))}<span class="alt" lang="${lang==="ar"?"en":"ar"}">${esc(other(d))}</span></h3><span id="price-${d.id}">${priceHTML(d)}</span></div>
+      <p class="desc">${esc(d[lang==="ar"?"dAr":"dEn"])}</p>
+      <div class="dish-foot" id="foot-${d.id}">${footHTML(d)}</div>
+    </div>
+  </article>`;
+}
+function renderMenu(){
+  $("#menu").innerHTML = visibleCats().map(c=>{
+    const items = DISHES.filter(d=>d.cat===c.id);
+    const note = c[lang==="ar"?"noteAr":"noteEn"];
+    const feature = c.id==="feasts" || c.id==="offers";
+    return `<section id="${c.id}" class="sec-${c.id}" aria-labelledby="h-${c.id}">
+      <div class="sec-head"><h2 id="h-${c.id}">${esc(c[lang])}</h2><span class="rule"></span></div>
+      ${note?`<p class="sec-note">${esc(note)}</p>`:""}
+      <div class="grid${feature?" feature":""}">${items.map(cardHTML).join("")}</div></section>`;
+  }).join("") + `
+    <div class="info">
+      <h2>${t("findUs")}</h2>
+      <p>${t("findText")}<br><span dir="ltr">06 749 7799 · 050 101 0534</span></p>
+      <div class="info-actions">
+        <a class="pill pill-gold" href="tel:${PHONE_CALL}">${t("call")}</a>
+        <a class="pill pill-wa" href="${waLink(t("waHello"))}" target="_blank" rel="noopener">${t("whatsapp")}</a>
+        <a class="pill pill-ghost" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Mandi Al Sultan Restaurant Badr Street Al Nuaimiya Ajman")}" target="_blank" rel="noopener">${t("map")}</a>
+      </div>
+    </div>
+    <p class="vat">${t("vat")}</p>`;
+  observeSections();
+}
+
+function totals(){
+  let n=0,sum=0,ask=false;
+  for(const [key,q] of Object.entries(cart)){ const p=priceOf(key); n+=q; if(p==null) ask=true; else sum+=p*q; }
+  return {n,sum,ask};
+}
+function renderBar(){
+  const {n,sum} = totals();
+  const callBtn = `<a class="pill call" href="tel:${PHONE_CALL}" aria-label="${t("call")}"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>${n?"":`<span>${t("call")}</span>`}</a>`;
+  $("#barInner").innerHTML = n
+    ? `${callBtn}<button class="pill cart-btn" type="button" id="openCart"><span><span class="count">${n}</span> ${t("viewOrder")}</span><span>${sum?fmt(sum):""}</span></button>`
+    : `${callBtn}<a class="pill pill-wa" href="${waLink(t("waHello"))}" target="_blank" rel="noopener" style="flex:1;justify-content:center">${t("whatsapp")}</a>`;
+}
+
+function renderSheet(){
+  const {n,sum,ask} = totals();
+  const body = $("#sheetBody");
+  if(!n){ body.innerHTML = `<p class="empty">${t("empty")}</p>`; $("#sendBtn").style.display="none"; return; }
+  $("#sendBtn").style.display="";
+  body.innerHTML = Object.entries(cart).map(([key,q])=>{
+    const d = dishOf(key), p = priceOf(key);
+    return `<div class="line"><img src="${d.img}" alt=""><div class="n"><b>${esc(keyName(key))}</b><span>${p==null?t("askPrice"):fmt(p*q)}</span></div>
+      <div class="stepper"><button type="button" data-dec="${key}" aria-label="${t("less")}">−</button><output>${q}</output><button type="button" data-inc="${key}" aria-label="${t("more")}">+</button></div></div>`;
+  }).join("") + `
+    <div class="total"><span>${t("total")}</span><span>${sum?fmt(sum):"—"}</span></div>
+    ${ask?`<p class="total-note">${t("traysNote")}</p>`:""}
+    <fieldset><legend>${t("type")}</legend><div class="seg">
+      ${["delivery","pickup","dinein"].map(v=>`<label><input type="radio" name="otype" value="${v}" ${form.type===v?"checked":""}><span>${t(v)}</span></label>`).join("")}
+    </div></fieldset>
+    <div class="field"><label for="fName">${t("name")}</label><input id="fName" autocomplete="name" value="${esc(form.name)}"></div>
+    ${form.type==="delivery"?`<div class="field"><label for="fAddr">${t("address2")}</label><input id="fAddr" autocomplete="street-address" value="${esc(form.addr)}"></div>`:""}
+    <div class="field"><label for="fNotes">${t("notes")}</label><textarea id="fNotes">${esc(form.notes)}</textarea></div>`;
+  updateSend();
+}
+function buildMessage(){
+  const {sum,ask} = totals();
+  const lines = [t("msgHi"),""];
+  for(const [key,q] of Object.entries(cart)){
+    const p = priceOf(key);
+    lines.push(`• ${q} × ${keyName(key)} — ${p==null?t("msgAsk"):fmt(p*q)}`);
+  }
+  lines.push("", `${t("msgTotal")}: ${sum?fmt(sum):"—"}${ask?` (+ ${t("msgAsk")})`:""}`);
+  lines.push(`${t("msgType")}: ${t(form.type)}`);
+  if(form.name.trim()) lines.push(`${t("msgName")}: ${form.name.trim()}`);
+  if(form.type==="delivery" && form.addr.trim()) lines.push(`${t("msgAddr")}: ${form.addr.trim()}`);
+  if(form.notes.trim()) lines.push(`${t("msgNotes")}: ${form.notes.trim()}`);
+  return lines.join("\n");
+}
+function updateSend(){
+  const b=$("#sendBtn");
+  b.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>${t("send")}`;
+  b.href = waLink(buildMessage());
+}
+
+function save(){ store.set("ms_cart2",cart); store.set("ms_form",form); }
+function refreshDish(id){
+  const d=DISHES.find(x=>x.id===id); if(!d) return;
+  const f=document.getElementById("foot-"+id); if(f) f.innerHTML=footHTML(d);
+  const p=document.getElementById("price-"+id); if(p) p.innerHTML=priceHTML(d);
+}
+function setQty(key,q){
+  if(q<=0) delete cart[key]; else cart[key]=q;
+  save(); refreshDish(key.split(":")[0]); renderBar();
+  if($("#sheet").classList.contains("open")) renderSheet();
+}
+
+/* ---------- sheet ---------- */
+let lastFocus=null;
+function openSheet(){ lastFocus=document.activeElement; renderSheet(); $("#scrim").classList.add("open"); $("#sheet").classList.add("open"); setTimeout(()=>$("#sheetClose").focus(),50); }
+function closeSheet(){ $("#scrim").classList.remove("open"); $("#sheet").classList.remove("open"); if(lastFocus) lastFocus.focus(); }
+
+let toastTimer;
+function toast(msg){ const el=$("#toast"); el.textContent=msg; el.classList.add("show"); clearTimeout(toastTimer); toastTimer=setTimeout(()=>el.classList.remove("show"),1400); }
+
+/* ---------- events ---------- */
+document.addEventListener("click",e=>{
+  const op=e.target.closest("[data-opt]"); if(op){ const [id,k]=op.dataset.opt.split(":"); sel[id]=k; refreshDish(id); const b=document.querySelector(`[data-opt="${id}:${k}"]`); if(b) b.focus(); return; }
+  const a=e.target.closest("[data-add]"); if(a){ const key=a.dataset.add; setQty(key,1); toast(t("added")); const s=document.querySelector(`#foot-${key.split(":")[0]} [data-inc]`); if(s) s.focus(); return; }
+  const i=e.target.closest("[data-inc]"); if(i){ setQty(i.dataset.inc,(cart[i.dataset.inc]||0)+1); return; }
+  const dc=e.target.closest("[data-dec]"); if(dc){ setQty(dc.dataset.dec,(cart[dc.dataset.dec]||0)-1); return; }
+  const g=e.target.closest("[data-go]"); if(g){ document.getElementById(g.dataset.go).scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"}); return; }
+  const z=e.target.closest("[data-zoom]"); if(z){ const d=DISHES.find(x=>x.id===z.dataset.zoom); $("#lbImg").src=d.img; $("#lbImg").alt=nm(d); $("#lightbox").classList.add("open"); $("#lbClose").focus(); return; }
+  if(e.target.closest("#openCart")){ openSheet(); return; }
+});
+$("#sheetClose").onclick=closeSheet; $("#scrim").onclick=closeSheet;
+$("#lbClose").onclick=()=>$("#lightbox").classList.remove("open");
+$("#lightbox").addEventListener("click",e=>{ if(e.target.id==="lightbox") e.currentTarget.classList.remove("open"); });
+document.addEventListener("keydown",e=>{ if(e.key==="Escape"){ closeSheet(); $("#lightbox").classList.remove("open"); }});
+$("#sheetBody").addEventListener("input",e=>{
+  if(e.target.id==="fName") form.name=e.target.value;
+  if(e.target.id==="fAddr") form.addr=e.target.value;
+  if(e.target.id==="fNotes") form.notes=e.target.value;
+  save(); updateSend();
+});
+$("#sheetBody").addEventListener("change",e=>{
+  if(e.target.name==="otype"){ form.type=e.target.value; save(); renderSheet(); }
+});
+$("#langBtn").onclick=()=>{ lang = lang==="ar"?"en":"ar"; store.set("ms_lang",lang); renderAll(); };
+
+/* ---------- active category ---------- */
+let io;
+function observeSections(){
+  if(io) io.disconnect();
+  if(!("IntersectionObserver" in window)) return;
+  io = new IntersectionObserver(entries=>{
+    entries.forEach(en=>{ if(en.isIntersecting){
+      document.querySelectorAll(".cat").forEach(b=>{
+        const on=b.dataset.go===en.target.id; b.setAttribute("aria-current",on);
+        if(on){ const c=$("#cats"); c.scrollLeft = b.offsetLeft - (c.clientWidth-b.offsetWidth)/2; }
+      });
+    }});
+  },{rootMargin:"-30% 0px -60% 0px"});
+  document.querySelectorAll("main section").forEach(s=>io.observe(s));
+}
+
+function renderAll(){ renderStatic(); renderMenu(); renderBar(); if($("#sheet").classList.contains("open")) renderSheet(); }
+renderAll();
+</script>
+</body>
+</html>
