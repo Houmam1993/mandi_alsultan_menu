@@ -140,6 +140,11 @@ html[dir="ltr"] .price small{margin-inline-start:0}
 .opts button[aria-checked="true"]{background:rgba(201,164,92,.22);color:var(--ink)}
 .was{color:var(--ink-2);font-weight:500;font-size:14px}
 .sec-offers .dish{border-color:var(--gold)}
+.sec-offers .badge{background:var(--gold);color:var(--navy);font-weight:700;font-size:15px;padding:6px 14px}
+.combo{display:grid;gap:8px;margin-top:4px}
+.combo-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.combo-n{width:26px;height:26px;border-radius:50%;background:var(--navy);color:var(--gold-soft);display:grid;place-items:center;font-size:13px;font-weight:700;flex:none}
+.combo select{flex:1;min-width:150px;font:inherit;font-size:15px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:8px 10px;min-height:42px}
 
 /* ---------- Info ---------- */
 .info{margin-top:36px;background:var(--navy);color:#F1E9D8;border-radius:22px;padding:24px 20px;display:grid;gap:14px}
@@ -287,6 +292,16 @@ const CATS = [
    {id:"offer-1",cat:"offers",img:"images/offer-1.jpg",price:49,was:65,ar:"…",en:"…",dAr:"…",dEn:"…"},
    The Offers section and its tab appear automatically once an offer exists. */
 const DISHES = [
+  /* Offers */
+  {id:"offer-3chicken",cat:"offers",img:"images/offer_chicken3.jpg",price:70,
+    badgeAr:"3 وجبات بـ 70 درهم",badgeEn:"3 meals for AED 70",
+    combo:{count:3,
+      meals:[{k:"mandi",ar:"مندي دجاج",en:"Chicken mandi"},{k:"madhbi",ar:"مظبي دجاج",en:"Chicken madhbi"},
+             {k:"machine",ar:"دجاج ماكينة",en:"Rotisserie chicken"},{k:"musahab",ar:"مسحب دجاج على الفحم",en:"Charcoal musahab"}],
+      sides:[{k:"rice",ar:"رز",en:"Rice"},{k:"fries",ar:"بطاطا",en:"Fries"}]},
+    ar:"عرض 3 وجبات دجاج",en:"3 chicken meals offer",
+    dAr:"اختر أي 3 وجبات دجاج، وكل وجبة مع رز أو بطاطا.",dEn:"Pick any 3 chicken meals, each with rice or fries."},
+
   /* Daily dishes */
   {id:"mansaf",cat:"daily",img:"images/mansaf.jpg",price:39,
     ar:"منسف أردني",en:"Jordanian mansaf",
@@ -366,18 +381,23 @@ if(!T[lang]) lang = "ar";
 const dishOf = key => DISHES.find(d=>d.id===key.split(":")[0]);
 const optOf  = key => { const d=dishOf(key); const k=key.split(":")[1]; return d&&d.opts ? d.opts.find(o=>o.k===k) : null; };
 const opt2Of = key => { const d=dishOf(key); const k=key.split(":")[2]; return d&&d.opts2 ? d.opts2.find(o=>o.k===k) : null; };
+let combo = {}; DISHES.forEach(d=>{ if(d.combo) combo[d.id]=Array.from({length:d.combo.count},(_, i)=>({m:d.combo.meals[i%d.combo.meals.length].k,s:d.combo.sides[0].k})); });
+const comboKey = d => `${d.id}:${combo[d.id].map(x=>x.m+"-"+x.s).join(",")}`;
+const comboParts = key => { const d=dishOf(key); if(!d||!d.combo) return null; const raw=key.split(":")[1]||"";
+  const parts=raw.split(",").map(p=>{ const [m,s]=p.split("-"); return {m:d.combo.meals.find(x=>x.k===m), s:d.combo.sides.find(x=>x.k===s)}; });
+  return parts.length===d.combo.count && parts.every(p=>p.m&&p.s) ? parts : null; };
 const priceOf = key => { const o=optOf(key); return o ? o.price : dishOf(key).price; };
 let cart = store.get("ms_cart2") || {};
-for(const k in cart){ const d=dishOf(k); if(!d || !(cart[k]>0) || (d.opts && !optOf(k)) || (d.opts2 && !opt2Of(k))) delete cart[k]; }
+for(const k in cart){ const d=dishOf(k); if(!d || !(cart[k]>0) || (d.opts && !optOf(k)) || (d.opts2 && !opt2Of(k)) || (d.combo && !comboParts(k))) delete cart[k]; }
 let sel = {}, sel2 = {}; DISHES.forEach(d=>{ if(d.opts) sel[d.id]=d.opts[0].k; if(d.opts2) sel2[d.id]=d.opts2[0].k; });
-const keyFor = d => d.opts ? `${d.id}:${sel[d.id]}${d.opts2?":"+sel2[d.id]:""}` : d.id;
+const keyFor = d => d.combo ? comboKey(d) : d.opts ? `${d.id}:${sel[d.id]}${d.opts2?":"+sel2[d.id]:""}` : d.id;
 let form = Object.assign({type:"delivery",name:"",addr:"",notes:""}, store.get("ms_form")||{});
 
 const $ = s => document.querySelector(s);
 const t = k => T[lang][k];
 const nm = d => d[lang];
 const other = d => d[lang==="ar"?"en":"ar"];
-const keyName = key => { const d=dishOf(key), o=optOf(key), o2=opt2Of(key); return o ? `${nm(d)} (${o[lang]}${o2?" · "+o2[lang]:""})` : nm(d); };
+const keyName = key => { const d=dishOf(key), o=optOf(key), o2=opt2Of(key), cp=comboParts(key); if(cp) return `${nm(d)} (${cp.map(p=>`${p.m[lang]} + ${p.s[lang]}`).join(lang==="ar"?"، ":", ")})`; return o ? `${nm(d)} (${o[lang]}${o2?" · "+o2[lang]:""})` : nm(d); };
 const fmt = n => lang==="ar" ? `${n} ${t("cur")}` : `${t("cur")} ${n}`;
 const esc = s => String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const waLink = text => `https://wa.me/${PHONE_WA}?text=${encodeURIComponent(text)}`;
@@ -415,6 +435,13 @@ function footHTML(d){
     : `<div class="stepper"><button type="button" data-dec="${key}" aria-label="${t("less")}">−</button><output aria-live="polite">${q}</output><button type="button" data-inc="${key}" aria-label="${t("more")}">+</button></div>`;
   return `${optsHTML(d)}${ctl}`;
 }
+function comboHTML(d){
+  return combo[d.id].map((x,i)=>`<div class="combo-row">
+    <span class="combo-n">${i+1}</span>
+    <select data-combo="${d.id}:${i}" aria-label="${lang==="ar"?"الوجبة":"Meal"} ${i+1}">${d.combo.meals.map(m=>`<option value="${m.k}" ${x.m===m.k?"selected":""}>${esc(m[lang])}</option>`).join("")}</select>
+    <div class="opts" role="radiogroup" aria-label="${lang==="ar"?"الوجبة":"Meal"} ${i+1}">${d.combo.sides.map(s=>`<button type="button" role="radio" aria-checked="${x.s===s.k}" data-side="${d.id}:${i}:${s.k}">${esc(s[lang])}</button>`).join("")}</div>
+  </div>`).join("");
+}
 function cardHTML(d){
   const badge = d[lang==="ar"?"badgeAr":"badgeEn"];
   return `<article class="dish">
@@ -423,8 +450,9 @@ function cardHTML(d){
       ${badge?`<span class="badge">${esc(badge)}</span>`:""}
     </button>
     <div class="dish-body">
-      <div class="dish-title"><h3>${esc(nm(d))}<span class="alt" lang="${lang==="ar"?"en":"ar"}">${esc(other(d))}</span></h3><span id="price-${d.id}">${priceHTML(d)}</span></div>
+      <div class="dish-title"><h3>${esc(nm(d))}<span class="alt" lang="${lang==="ar"?"en":"ar"}"><bdi>${esc(other(d))}</bdi></span></h3><span id="price-${d.id}">${priceHTML(d)}</span></div>
       <p class="desc">${esc(d[lang==="ar"?"dAr":"dEn"])}</p>
+      ${d.combo?`<div class="combo" id="combo-${d.id}">${comboHTML(d)}</div>`:""}
       <div class="dish-foot" id="foot-${d.id}">${footHTML(d)}</div>
     </div>
   </article>`;
@@ -527,6 +555,7 @@ function toast(msg){ const el=$("#toast"); el.textContent=msg; el.classList.add(
 
 /* ---------- events ---------- */
 document.addEventListener("click",e=>{
+  const sd=e.target.closest("[data-side]"); if(sd){ const [id,i,k]=sd.dataset.side.split(":"); combo[id][+i].s=k; const box=document.getElementById("combo-"+id); if(box){ const d=DISHES.find(x=>x.id===id); box.innerHTML=comboHTML(d); const b=box.querySelector(`[data-side="${id}:${i}:${k}"]`); if(b) b.focus(); } refreshCombo(id); return; }
   const op2=e.target.closest("[data-opt2]"); if(op2){ const [id,k]=op2.dataset.opt2.split(":"); sel2[id]=k; refreshDish(id); const b=document.querySelector(`[data-opt2="${id}:${k}"]`); if(b) b.focus(); return; }
   const op=e.target.closest("[data-opt]"); if(op){ const [id,k]=op.dataset.opt.split(":"); sel[id]=k; refreshDish(id); const b=document.querySelector(`[data-opt="${id}:${k}"]`); if(b) b.focus(); return; }
   const a=e.target.closest("[data-add]"); if(a){ const key=a.dataset.add; setQty(key,1); toast(t("added")); const s=document.querySelector(`#foot-${key.split(":")[0]} [data-inc]`); if(s) s.focus(); return; }
@@ -546,6 +575,11 @@ $("#sheetBody").addEventListener("input",e=>{
   if(e.target.id==="fNotes") form.notes=e.target.value;
   save(); updateSend();
 });
+$("#menu").addEventListener("change",e=>{
+  const c=e.target.closest("[data-combo]"); if(!c) return;
+  const [id,i]=c.dataset.combo.split(":"); combo[id][+i].m=c.value; refreshCombo(id);
+});
+function refreshCombo(id){ const d=DISHES.find(x=>x.id===id); const f=document.getElementById("foot-"+id); if(f) f.innerHTML=footHTML(d); }
 $("#sheetBody").addEventListener("change",e=>{
   if(e.target.name==="otype"){ form.type=e.target.value; save(); renderSheet(); }
 });
