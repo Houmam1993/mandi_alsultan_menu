@@ -135,6 +135,8 @@ html[dir="ltr"] .price small{margin-inline-start:0}
 .dish-foot{gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
 .dish-foot .add,.dish-foot .stepper{margin-inline-start:auto}
 .dish-foot .opts+.opts{margin-inline-start:0}
+.opts.many{display:grid;grid-template-columns:1fr 1fr;width:100%;border-radius:16px;gap:4px;padding:4px}
+.opts.many button{border-radius:12px}
 .opts{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px}
 .opts button{border:0;background:transparent;border-radius:999px;padding:6px 12px;font-size:14px;cursor:pointer;min-height:36px;color:var(--ink-2);font-weight:600}
 .opts button[aria-checked="true"]{background:rgba(201,164,92,.22);color:var(--ink)}
@@ -281,6 +283,8 @@ const T = {
 const CATS = [
   {id:"offers",ar:"العروض",en:"Offers",noteAr:"عروض متاحة لفترة محدودة.",noteEn:"Available for a limited time."},
   {id:"daily",ar:"الأطباق اليومية",en:"Daily dishes"},
+  {id:"fakharat",ar:"فخارات السلطان",en:"Sultan clay pots",
+    noteAr:"تُطهى في الفرن بصوصنا الخاص. كل فخارة وجبة كاملة مع خبز تنور وبطاطا ومشروب غازي.",noteEn:"Oven-baked in our special sauce. Each pot is a full meal with tanoor bread, fries and a soft drink."},
   {id:"mandi",ar:"المندي والحنيذ",en:"Mandi & haneeth"},
   {id:"rotisserie",ar:"دجاج الماكينة",en:"Rotisserie chicken"},
   {id:"feasts",ar:"ذبائح للولائم والعزائم",en:"Feasts & gatherings",
@@ -319,6 +323,13 @@ const DISHES = [
   {id:"bbq-combo",cat:"daily",img:"images/bbq_combo.jpg",price:35,badgeAr:"وجبة مع مشروب",badgeEn:"Meal + drink",
     ar:"وجبة دجاج باربكيو",en:"Chicken BBQ combo",
     dAr:"دجاج مشوي مع بطاطا متبلة وصوصات ومخلل. تُقدَّم مع خبز طازج ومشروب غازي.",dEn:"Grilled chicken with spiced potatoes, dips and pickled peppers. Comes with fresh bread and a soft drink."},
+
+  /* Sultan clay pots */
+  {id:"fakhara",cat:"fakharat",img:"images/fakhara.jpg",badgeAr:"خبز تنور + بطاطا + مشروب",badgeEn:"Bread + fries + drink",
+    opts:[{k:"tawook",ar:"شيش طاووق",en:"Shish tawook",price:30},{k:"wings",ar:"جوانح دجاج",en:"Chicken wings",price:30},
+          {k:"musahab",ar:"مسحب دجاج",en:"Chicken musahab",price:30},{k:"kebab",ar:"كباب لحم",en:"Meat kebab",price:30}],
+    ar:"فخارة السلطان",en:"Sultan clay pot",
+    dAr:"اختر الفخارة: شيش طاووق، جوانح دجاج، مسحب دجاج أو كباب لحم، مطهوة في الفرن بصوص السلطان الخاص.",dEn:"Pick your pot: shish tawook, chicken wings, chicken musahab or meat kebab, baked in our special Sultan sauce."},
 
   /* Mandi & madhbi */
   {id:"haneeth",cat:"mandi",img:"images/haneeth.jpg",
@@ -424,7 +435,7 @@ function priceHTML(d){
 }
 function optsHTML(d){
   if(!d.opts) return "";
-  return `<div class="opts" role="radiogroup" aria-label="${esc(nm(d))}">${d.opts.map(o=>
+  return `<div class="opts${d.opts.length>3?" many":""}" role="radiogroup" aria-label="${esc(nm(d))}">${d.opts.map(o=>
     `<button type="button" role="radio" aria-checked="${sel[d.id]===o.k}" data-opt="${d.id}:${o.k}">${esc(o[lang])}</button>`).join("")}</div>${d.opts2?`<div class="opts" role="radiogroup" aria-label="${esc(nm(d))}">${d.opts2.map(o=>
     `<button type="button" role="radio" aria-checked="${sel2[d.id]===o.k}" data-opt2="${d.id}:${o.k}">${esc(o[lang])}</button>`).join("")}</div>`:""}`;
 }
